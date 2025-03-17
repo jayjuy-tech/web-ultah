@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nur Faiqatin Nisa!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #8e44ad, #3498db);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1s ease-out forwards 0.5s;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1s ease-out forwards 1s;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1s ease-out forwards 1.5s;
+        }
+
+        .cake {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 40px;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: scaleIn 1s ease-out forwards 2s;
+        }
+
+        .plate {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 15px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cake-bottom {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 60px;
+            background-color: #f39c12;
+            border-radius: 10px 10px 5px 5px;
+        }
+
+        .cake-middle {
+            position: absolute;
+            bottom: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 45px;
+            background-color: #e74c3c;
+            border-radius: 5px;
+        }
+
+        .cake-top {
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 40px;
+            background-color: #3498db;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .candle {
+            position: absolute;
+            bottom: 160px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 30px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+        }
+
+        .flame {
+            position: absolute;
+            bottom: 190px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 20px;
+            background-color: #f1c40f;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: flicker 0.6s ease-in-out infinite alternate;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1s ease-out forwards 2.5s;
+        }
+
+        .button:hover {
+            background: white;
+            color: #8e44ad;
+            transform: scale(1.05);
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f1c40f;
+            top: -10px;
+            animation: fall linear;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fall {
+            to {
+                top: 100vh;
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes flicker {
+            0% {
+                transform: translateX(-50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-50%) scale(1.1) skewX(5deg);
+                opacity: 0.9;
+                filter: brightness(1.2);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .message {
+                font-size: 1rem;
+            }
+
+            .cake {
+                transform: scale(0.7);
+                margin-bottom: 20px;
+            }
+
+            .button {
+                font-size: 1rem;
+                padding: 10px 25px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cake">
+            <div class="plate"></div>
+            <div class="cake-bottom"></div>
+            <div class="cake-middle"></div>
+            <div class="cake-top"></div>
+            <div class="candle"></div>
+            <div class="flame"></div>
+        </div>
+        <h1>HAPPY BIRTHDAY CANTIKKK!</h1>
+        <p>Di hari spesialmu ini...</p>
+        <div class="message">
+            Semoga tahun baru kehidupanmu dipenuhi kebahagiaan, kesehatan, dan kesuksesan. Jadikan hari ini awal dari tahun terbaikmu!
+        </div>
+        <button class="button" id="celebrateBtn">Rayakan!</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const celebrateBtn = document.getElementById('celebrateBtn');
+            const container = document.querySelector('.container');
+            const body = document.querySelector('body');
+            
+            // Konfetti warna
+            const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', 
+                           '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4CAF50', 
+                           '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722'];
+            
+            // Fungsi untuk membuat konfetti
+            function createConfetti() {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                
+                // Posisi random
+                const startPositionX = Math.random() * window.innerWidth;
+                
+                // Ukuran random
+                const size = Math.floor(Math.random() * 10) + 5;
+                
+                // Warna random
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Bentuk random (kotak, lingkaran, segitiga)
+                const shapes = ['', '50%'];
+                const shape = shapes[Math.floor(Math.random() * shapes.length)];
+                
+                // Durasi animasi random
+                const animationDuration = Math.random() * 3 + 2;
+                
+                confetti.style.left = startPositionX + 'px';
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                confetti.style.backgroundColor = color;
+                confetti.style.borderRadius = shape;
+                confetti.style.animationDuration = animationDuration + 's';
+                
+                body.appendChild(confetti);
+                
+                // Hapus konfetti setelah animasi selesai
+                setTimeout(() => {
+                    confetti.remove();
+                }, animationDuration * 1000);
+            }
+            
+            // Event ketika tombol "Rayakan" ditekan
+            celebrateBtn.addEventListener('click', function() {
+                // Putar audio "Happy Birthday"
+                const audio = new Audio('https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js');
+                audio.play();
+                
+                // Buat banyak konfetti
+                for (let i = 0; i < 150; i++) {
+                    setTimeout(createConfetti, i * 30);
+                }
+                
+                // Tambahkan efek goncangan pada kue
+                const cake = document.querySelector('.cake');
+                cake.style.animation = 'none';
+                cake.offsetHeight; // Trigger reflow
+                cake.style.animation = 'scaleIn 0.5s ease-out forwards, shake 0.5s ease-in-out';
+                
+                // Ubah pesan
+                const message = document.querySelector('.message');
+                message.textContent = "Semoga semua harapan dan impianmu menjadi kenyataan! Tetaplah bersinar dan tersenyum selalu!";
+                message.style.animation = 'fadeIn 0.5s ease-out forwards';
+                
+                // Ubah teks tombol
+                this.textContent = 'Hooray! 🎉';
+                this.disabled = true;
+                
+                // Tambahkan animasi background
+                body.style.animation = 'backgroundChange 5s ease infinite alternate';
+                body.style.backgroundSize = '400% 400%';
+                
+                // Tambahkan efek kilau
+                const h1 = document.querySelector('h1');
+                h1.style.textShadow = '0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6)';
+            });
+            
+            // Efek hover untuk kue
+            const cake = document.querySelector('.cake');
+            cake.addEventListener('mouseenter', function() {
+                const flame = document.querySelector('.flame');
+                flame.style.animation = 'flicker 0.3s ease-in-out infinite alternate';
+            });
+            
+            cake.addEventListener('mouseleave', function() {
+                const flame = document.querySelector('.flame');
+                flame.style.animation = 'flicker 0.6s ease-in-out infinite alternate';
+            });
+        });
+    </script>
+</body>
+</html>
